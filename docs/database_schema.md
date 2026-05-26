@@ -10,11 +10,14 @@
 | password | varchar | Password terenkripsi |
 
 
-## Tabel posts
+## Tabel properties
 
 | Field | Type | Keterangan |
 |---|---|---|
 | id | integer | Primary Key |
 | user_id | integer | Relasi ke users |
-| title | varchar | Judul posting |
-| content | text | Isi posting |
+| title | varchar | Nama properti |
+| location | varchar | Lokasi properti |
+| price | decimal | Harga properti |
+| description | text | Deskripsi properti |
+| image_url | text | Foto properti |

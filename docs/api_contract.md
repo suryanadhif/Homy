@@ -61,7 +61,7 @@
 
 ---
 
-## GET /api/posts
+## GET /api/properties
 
 ### Response
 
@@ -69,21 +69,25 @@
 [
   {
     "id": 1,
-    "title": "Posting Pertama"
+    "title": "Rumah Minimalis",
+    "location": "Jakarta",
+    "price": 500000000
   }
 ]
 ```
 
 ---
 
-## POST /api/posts
+## POST /api/properties
 
 ### Request
 
 ```json
 {
-  "title": "Judul Post",
-  "content": "Isi posting"
+  "title": "Rumah Modern",
+  "location": "Bandung",
+  "price": 750000000,
+  "description": "Rumah modern 2 lantai"
 }
 ```
 
