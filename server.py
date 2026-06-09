@@ -1,22 +1,14 @@
-from flask import Flask
+from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
+
 
 app = Flask(__name__)
 
-CORS(
-    app,
-    resources={
-        r"/*": {
-            "origins": "http://localhost:3000"
-        }
-    }
-)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route("/")
 def home():
-    return {
-        "message": "Homy Backend Server Running"
-    }
+    return send_from_directory("views", "index.html")
 
 @app.route("/api/data")
 def get_data():
@@ -33,6 +25,10 @@ def get_data():
             }
         ]
     }
+
+@app.route("/views/<path:filename>")
+def static_files(filename):
+    return send_from_directory("views", filename)
 
 if __name__ == "__main__":
     app.run(debug=True)
