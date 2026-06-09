@@ -140,3 +140,15 @@ nav a{
     width:100%;
     max-width:650px;
 }
+
+#integration {
+    margin: 40px;
+}
+
+#loading {
+    color: blue;
+}
+
+#error {
+    color: red;
+}
