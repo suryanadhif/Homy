@@ -26,7 +26,7 @@ def get_data():
         ]
     }
 
-@app.route("/views/<path:filename>")
+@app.route("/<path:filename>")
 def static_files(filename):
     return send_from_directory("views", filename)
 
