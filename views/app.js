@@ -11,7 +11,7 @@ async function loadData() {
         dataList.innerHTML = "";
 
         const response = await fetch(
-            "http://127.0.0.1:5000/api/data"
+            "http://127.0.0A.1:5000/api/data"
         );
 
         if (!response.ok) {
@@ -20,7 +20,7 @@ async function loadData() {
 
         const result = await response.json();
 
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 10000));
         loading.style.display = "none";
 
         result.data.forEach(item => {
