@@ -1,0 +1,31 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+    volumes:
+      - logs:/app/logs
+    networks:
+      - homy-network
+
+  database:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_PASSWORD=rahasia
+    volumes:
+      - homy-db-data:/var/lib/postgresql/data
+    networks:
+      - homy-network
+
+volumes:
+  homy-db-data:
+  logs:
+
+networks:
+  homy-network:
+    driver: bridge
