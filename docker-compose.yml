@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.backend
+      dockerfile: Dockerfile.frontend
     ports:
       - "5000:5000"
     environment:
@@ -10,6 +11,7 @@ services:
       - DB_PORT=${DB_PORT}
     volumes:
       - logs:/app/logs
+      - ./views:/app/views
     networks:
       - homy-network
 
