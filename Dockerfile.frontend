@@ -1,3 +1,10 @@
 FROM nginx:alpine
+
+LABEL org.opencontainers.image.title="Homy Frontend"
+LABEL org.opencontainers.image.description="Frontend Production Image"
+LABEL org.opencontainers.image.version="1.0.0"
+LABEL org.opencontainers.image.source="https://github.com/suryanadhif/Homy"
+
 ENV API_URL=http://127.0.0.1:5000/api/data
+
 COPY views /usr/share/nginx/html
