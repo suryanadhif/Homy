@@ -32,4 +32,4 @@ volumes:
 
 networks:
   homy-network:
-    driver: bridge
+    driver: bridge  
